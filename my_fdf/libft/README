@@ -1,0 +1,14 @@
+Welcome to my libft library!!
+To use, copy the libft folder into the folder of the file you are trying to use the library from,
+run "make lib" in the library and be sure to have the (#include "./libft/libft.h") included at the top of your main file.
+when compiling your 'filename.c', compile 'libft.a' at the same time.
+e.g: 'gcc filename.c libft.a'
+enjoy!
+
+commands:
+
+make lib: compile all files and clean, leaving libft.a library file
+make re: recompile
+make: compile all files
+make clean: clean object files
+make fclean: clean object and library files
