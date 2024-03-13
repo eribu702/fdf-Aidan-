@@ -45,8 +45,7 @@ fclean: clean
 	$(RM) $(NAME)
 	
 norm:
-	norminette srcs/ includes/
-# || true
+	norminette srcs/ includes/|| true
 
 re: fclean all
 

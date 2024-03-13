@@ -6,7 +6,7 @@
 /*   By: aroberts <aroberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 12:55:12 by aroberts          #+#    #+#             */
-/*   Updated: 2024/02/20 15:03:08 by aroberts         ###   ########.fr       */
+/*   Updated: 2024/03/05 10:44:21 by aroberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,27 @@ static bool	save_line_data(char *line, int width, t_stack **data)
 	return (true);
 }
 
+/*
+our function, parse_map, reads the data from our t_map structure,
+'map', and saves it to our t_stack structure, 'data'.
+we initalize an int fd (file descriptor), and a char *line, that
+we will use to get the data from the map file in a char *.
+we use open() with a readonly flag to open map->file. we assign
+this filedescriptor to fd, and check for errors.
+after, we assign line to read_map_file(fd). after this we assign
+map-> width to the width of the map, and height to 0, as we will
+be incrementing down lines to structure our data.
+while (line != '\0') we:
+- save_line_data with (line and map-> width.) we use a check
+to make sure this works, otherwise it will give us an error message.
+we then take map->height and increment it, going down one line.
+then we free (&line) and use read_map_file to save the nect line.
+we continue doing this until our code meents a null and finishes.
+we then close our file descriptor, and free our line. we check if (line) just in
+case the while loop closed somehow before it reached the end of the map (fd).
+we then do another check for errors, and then return true.
+
+*/
 bool	parse_map(t_map *map, t_stack **data)
 {
 	int		fd;
@@ -80,7 +101,8 @@ bool	parse_map(t_map *map, t_stack **data)
 		line = read_map_file(fd);
 	}
 	close(fd);
-	ft_free(&line);
+	if (line)
+		ft_free(&line);
 	if ((map->width && map->height) <= 0)
 		return (false);
 	return (true);

@@ -6,7 +6,7 @@
 /*   By: aroberts <aroberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 13:19:48 by aroberts          #+#    #+#             */
-/*   Updated: 2024/02/28 15:57:24 by aroberts         ###   ########.fr       */
+/*   Updated: 2024/03/13 16:33:47 by aroberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,20 @@ static char	*check_update_output(char **buffer, int pos, int bytes)
 	return (output);
 }
 
+/*
+our function read map file, takes a file descritpor that stores a map file.
+it converts the file descriptor to a char *.
+we first check that the file descriptor is valid and that BUFFER_SIZE is not
+<= 0. if these are true we return NULL. we initalize bytes and read_buff,
+and then we use a function named ft_strchr_flag() to find the first '\n'
+in buffer and set that to an interger called 'pos'.
+*/
 char	*read_map_file(int fd)
 {
 	int			bytes;
 	int			pos;
 	char		*read_buff;
-	static char	*buffer;
+	static char	*buffer = NULL;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
