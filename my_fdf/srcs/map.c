@@ -12,6 +12,20 @@
 
 #include "../includes/fdf.h"
 
+/*
+get_map_width, takes char *line. this has within it one line
+of data from our map file.
+the map file contains numbers that have spaces in between them.
+these numbers can range from negatives to double digits. we want to
+count the data, which means -1, or 20, should both be treated as one
+value of data. if we use something like strlen, we will be counting
+10's as '1' and '0' 's. and spaces will add to the count, minus '-'
+symbols also. instead we use split.
+we create a char **split, which is an array of strings. so rather than
+containing one string, it is like a string full of strings.
+then we initalize i for incrementing. after a loop, we free **split,
+and return i. we have effectively counted the data in line without
+treating each single character as a piece of data.*/
 static int	get_map_width(char *line)
 {
 	int		i;
