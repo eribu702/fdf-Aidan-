@@ -6,7 +6,7 @@
 /*   By: aroberts <aroberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 14:49:47 by aroberts          #+#    #+#             */
-/*   Updated: 2024/02/28 15:52:58 by aroberts         ###   ########.fr       */
+/*   Updated: 2024/03/19 14:40:46 by aroberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ write comments for:
 
 utils functinos x
 READ MAP FUNCTIONS
-MAP functions
+MAP functions X
 stack functions
 
 

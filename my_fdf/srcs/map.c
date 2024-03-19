@@ -6,7 +6,7 @@
 /*   By: aroberts <aroberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 12:55:12 by aroberts          #+#    #+#             */
-/*   Updated: 2024/03/05 10:44:21 by aroberts         ###   ########.fr       */
+/*   Updated: 2024/03/19 14:39:05 by aroberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,23 +29,46 @@ treating each single character as a piece of data.*/
 static int	get_map_width(char *line)
 {
 	int		i;
-	int		width;
 	char	**split;
 
-	width = 0;
 	split = ft_split(line, ' ');
 	if (!split)
 		return (-1);
 	i = 0;
 	while (split[i])
-	{
-		width++;
 		i++;
-	}
 	ft_free_split(split);
-	return (width);
+	return (i);
 }
 
+/*
+in our function save_line_data, we save the data thats been retrieved by
+our function read_map_file, that reads our fd (mapfile) in lines, sending them
+through line by line. we take a string named line, this contains the line
+of data to be saved. an int, width, that contains the expected width of the
+data, this indicates the number of elements that should be in the line,
+and a t_stack **data, a double pointer which not only allows us to modify
+the 'data' value, but allows us to modify the pointer itself to the data
+variable, so we can create a linked list.
+we declare an int for incrementing, 'i'. and two char ** (an array of strings)
+called split and values. because we have some values within our map function
+that are not only seperated with spaces, but also with commas, we need to split
+for both spaces and commas. our width value doesnt account for this though,
+and to split these things up would require two calls of split, one for ' ' (space)
+and one for ','. so, we split line by ' ' and set the result to **split.
+we then check it for errors. after this we initialize i to 0, and and begin our loop.
+split[i] does not refer to characters within the split string, but strings within
+the split array. meaning split[0] will refer to the first character of the first string
+and split[1] will refer to the first character of the second string.
+while split[i] hasnt reached its final string, and while i < width.
+then, we split[i] by ',' and set it to values. then we use our function
+save_to_stack, with values and data, and check its result. if it fails,
+we free our split and values chars and return false. otherwise, we just
+free values, and increment. when this loop breaks, we free our split char,
+and make sure that i matches width. and return false or true acordingly.
+using our function this way, even though we split some values again, we
+only increment i once per loop, meaning that i and width should match up
+even if our file is littered with commas.*/
 static bool	save_line_data(char *line, int width, t_stack **data)
 {
 	int		i;
@@ -92,9 +115,7 @@ then we free (&line) and use read_map_file to save the nect line.
 we continue doing this until our code meents a null and finishes.
 we then close our file descriptor, and free our line. we check if (line) just in
 case the while loop closed somehow before it reached the end of the map (fd).
-we then do another check for errors, and then return true.
-
-*/
+we then do another check for errors, and then return true.*/
 bool	parse_map(t_map *map, t_stack **data)
 {
 	int		fd;

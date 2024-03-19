@@ -6,7 +6,7 @@
 /*   By: aroberts <aroberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 17:46:35 by aroberts          #+#    #+#             */
-/*   Updated: 2024/02/20 14:58:39 by aroberts         ###   ########.fr       */
+/*   Updated: 2024/03/14 13:40:55 by aroberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
 void		ft_free(char **ptr);
-void		ft_free_spit(char **split);
+void		ft_free_split(char **split);
 char		*fr_strnjoin(char *s1, char *s2, int bytes);
 char		*ft_strndup(char *str, int n_bytes);
 int			ft_strchr_flag(const char *str, int c, int flag);
