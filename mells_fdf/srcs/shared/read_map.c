@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmells <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: aroberts <aroberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 09:32:38 by lmells            #+#    #+#             */
-/*   Updated: 2022/02/15 10:46:19 by lmells           ###   ########.fr       */
+/*   Updated: 2024/03/19 16:53:58 by aroberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char	*read_map_file(int fd)
 	int			bytes;
 	int			pos;
 	char		*read_buff;
-	static char	*buffer;
+	static char	*buffer = "";
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);

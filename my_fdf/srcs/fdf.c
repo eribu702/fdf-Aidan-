@@ -6,7 +6,7 @@
 /*   By: aroberts <aroberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 14:49:47 by aroberts          #+#    #+#             */
-/*   Updated: 2024/03/19 14:40:46 by aroberts         ###   ########.fr       */
+/*   Updated: 2024/03/20 17:31:22 by aroberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	main(void)
 write comments for:
 
 utils functinos x
-READ MAP FUNCTIONS
+READ MAP FUNCTIONS X
 MAP functions X
 stack functions
 
