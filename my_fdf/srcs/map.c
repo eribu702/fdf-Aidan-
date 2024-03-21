@@ -6,7 +6,7 @@
 /*   By: aroberts <aroberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 12:55:12 by aroberts          #+#    #+#             */
-/*   Updated: 2024/03/19 14:39:05 by aroberts         ###   ########.fr       */
+/*   Updated: 2024/03/21 15:41:59 by aroberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,12 @@ we declare an int for incrementing, 'i'. and two char ** (an array of strings)
 called split and values. because we have some values within our map function
 that are not only seperated with spaces, but also with commas, we need to split
 for both spaces and commas. our width value doesnt account for this though,
-and to split these things up would require two calls of split, one for ' ' (space)
-and one for ','. so, we split line by ' ' and set the result to **split.
-we then check it for errors. after this we initialize i to 0, and and begin our loop.
-split[i] does not refer to characters within the split string, but strings within
-the split array. meaning split[0] will refer to the first character of the first string
+and to split these things up would require two calls of split, one for ' '
+(space) and one for ','. so, we split line by ' ' and set the result to
+**split. we then check it for errors. after this we initialize i to 0,
+and and begin our loop. split[i] does not refer to characters
+within the split string, but strings within the split array.
+meaning split[0] will refer to the first character of the first string
 and split[1] will refer to the first character of the second string.
 while split[i] hasnt reached its final string, and while i < width.
 then, we split[i] by ',' and set it to values. then we use our function

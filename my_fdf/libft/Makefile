@@ -6,7 +6,7 @@
 #    By: aroberts <aroberts@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/14 17:46:51 by aroberts          #+#    #+#              #
-#    Updated: 2024/02/20 14:59:11 by aroberts         ###   ########.fr        #
+#    Updated: 2024/03/21 15:45:52 by aroberts         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,8 +82,7 @@ fclean: clean
 	-rm -f $(OBJS)
 	-rm -f $(NAME)
 
-lib: all
-	-rm -f $(OBJS)
+lib: all clean
 
 re: fclean lib
 

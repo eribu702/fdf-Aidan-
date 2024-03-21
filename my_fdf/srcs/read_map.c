@@ -6,7 +6,7 @@
 /*   By: aroberts <aroberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 13:19:48 by aroberts          #+#    #+#             */
-/*   Updated: 2024/03/20 17:31:12 by aroberts         ###   ########.fr       */
+/*   Updated: 2024/03/21 15:42:29 by aroberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,8 @@ static char	*check_update_output(char **buffer, int pos, int bytes)
 our function read map file, takes a file descritpor that stores a map file.
 it converts the file descriptor to a char *.
 first we initilize and int, bytes, which we will use to count the amount of data
-that has been 'read'. pos, which will hold the position of the next '\n' character.
+that has been 'read'. pos, which will hold the position of the next '\n'
+character.
 a char pointer that will be able to store chunks of our file at a time. and a 
 static char * that will accumulate the contents of our file.
 we first check that the file descriptor is valid and that BUFFER_SIZE is not

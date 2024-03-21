@@ -47,6 +47,10 @@ fclean: clean
 norm:
 	norminette srcs/ includes/|| true
 
+run: all clean
+	$(MFCLEAN) $(PRI_PATH)
+	$(MFCLEAN) $(LIB_PATH)
+
 re: fclean all
 
-.PHONY: all clean fclean norm re
+.PHONY: all clean fclean norm re run
