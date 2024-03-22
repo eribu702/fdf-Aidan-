@@ -6,7 +6,7 @@
 /*   By: aroberts <aroberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 15:14:04 by aroberts          #+#    #+#             */
-/*   Updated: 2024/02/20 15:07:45 by aroberts         ###   ########.fr       */
+/*   Updated: 2024/03/22 17:29:03 by aroberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct s_stack
 {
 	int				z;
 	int				colour;
-	struct s_stack	*next;
+	struct s_stack	*last;
 }					t_stack;
 
 // camera information

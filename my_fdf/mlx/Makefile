@@ -10,8 +10,8 @@ CFLAGS+=-O2 -w
 all: $(NOM)
 
 $(NOM):	$(OBJ)
-	ar -r $(NOM) $(OBJ)
-	ranlib $(NOM)
+	@ar -r $(NOM) $(OBJ) > /dev/null
+	@ranlib $(NOM) > /dev/null
 
 clean:
 	rm -f $(NOM) $(OBJ) *~
